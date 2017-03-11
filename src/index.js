@@ -16,6 +16,8 @@ class AudioTemplate extends HTMLElement {
   static clickActions = ['playButton', 'pauseButton', 'stopButton']
   static changeActions = ['volumeInput']
 
+  // too much work to do in constructor
+  // to be fixed
   constructor() {
     super()
 

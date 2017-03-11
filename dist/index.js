@@ -13,6 +13,8 @@ const audioDuration = audio => new Promise(resolve => {
 
 let AudioTemplate = class AudioTemplate extends HTMLElement {
 
+  // too much work to do in constructor
+  // to be fixed
   constructor() {
     super();
 
