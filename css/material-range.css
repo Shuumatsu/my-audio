@@ -1,0 +1,86 @@
+:root {
+  --material-range-track-height: 3px;
+  --material-range-thumb-height: 12px;
+  --material-range-thumb-width: 12px;
+  --material-range-primary-color: #3f51b5;
+  --material-range-secondary-color: rgba(0, 0, 0, 0.26);
+  --material-range-thumb: {
+    position:relative;
+    z-index: 1;
+    appearance: none;
+    border-radius: 50%;
+    height: var(--material-range-thumb-height);
+    width: var(--material-range-thumb-width);
+    background: var(--material-range-primary-color);
+    transition: transform 0.25s ease-in-out;
+    &:active {
+      transform: scale(1.25)
+    }
+  }
+  --material-range-thumb-rest {
+    background: #fafafa;
+    border: 1px solid var(--material-range-secondary-color);
+  }
+  --material-range-track {
+    user-select: none;
+    height: var(--material-range-track-height)
+  }
+}
+
+#root {
+  display: flex;
+  position: relative;
+}
+
+#native-range {
+  padding: 0;
+  width: 100%;
+  height: var(--material-range-track-height);
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  outline: none;
+  appearance: none;
+  &::-webkit-slider-thumb {
+    @apply --material-range-thumb
+  }
+  &::-moz-range-thumb {
+    @apply --material-range-thumb
+  }
+  &::-ms-thumb {
+    @apply --material-range-thumb
+  }
+}
+
+#native-range.rest {
+  &::-webkit-slider-thumb {
+    @apply --material-range-thumb-rest
+  }
+  &::-moz-range-thumb {
+    @apply --material-range-thumb-rest
+  }
+  &::-ms-thumb {
+    @apply --material-range-thumb-rest
+  }
+}
+
+#track-container {
+  pointer-events: none;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translate3d(0, -50%, 0)
+}
+
+#left-track {
+  @apply --material-range-track;
+  background: var(--material-range-primary-color);
+}
+
+#right-track {
+  @apply --material-range-track;
+  background: var(--material-range-secondary-color);
+}

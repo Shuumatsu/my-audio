@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>player</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <template id="material-range">
+    <link rel="stylesheet" href="/material-range.css" />
+
+    <section id="root" role="input">
+      <div id="track-container">
+        <div id="left-track"></div>
+        <div id="right-track"></div>
+      </div>
+      <input id="native-range" type="range" min="0" max="100" />
+    </section>
+  </template>
+
+  <template id="my-audio">
+    <link rel="stylesheet" href="/my-audio.css" />
+
+    <section>
+      <canvas id="visualization"></canvas>
+      <audio id="native-audio" controls></audio>
+      <material-range id="progress-input" step="0.001" max="1" min="0"></material-range>
+      <button id="play-button">play</button>
+      <button id="pause-button">pause</button>
+      <button id="stop-button">stop</button>
+      <material-range id="volume-input" step="0.01" max="1" min="0" value="0.8"></material-range>
+      <a id="download" download>Download</a>
+      <p id="duration"></p>
+    </section>
+  </template>
+
+  <my-audio src="music.mp3"></my-audio>
+</body>
+
+</html>

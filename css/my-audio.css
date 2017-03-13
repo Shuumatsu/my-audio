@@ -1,0 +1,24 @@
+:root {
+  --range-input-primary-color: #3f51b5;
+  --range-input-thumb: {
+    appearance: none;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    background: var(--range-input-primary-color);
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+    &:active {
+      transform: scale(1.25)
+    }
+  }
+}
+
+#native-audio {
+  display: none 
+}
+
+#visualization {
+  height: 360px;
+  width: 480px;
+}
